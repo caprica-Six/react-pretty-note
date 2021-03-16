@@ -1,12 +1,10 @@
 import Note from './Note';
 
-const Notes = ({notes, onDelete}) => {
+const Notes = ({notes, onDelete, onToggle}) => {
   return (
     <ul className="list-group">
       {notes.map((note, index) => (
-        <li className="list-group-item" key={index}>
-          <Note note={note} onDelete={onDelete} />
-        </li>
+        <Note note={note} onDelete={onDelete} onToggle={onToggle} key={index} />
       ))}
     </ul>
   );

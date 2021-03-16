@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import Header from './components/Header';
 import Notes from './components/Notes';
+import AddNote from './components/AddNote';
 
 function App() {
   const [notes, setNotes] = useState([
@@ -29,15 +30,40 @@ function App() {
   // Delete note
   const deleteNote = (id) => {
     console.log('delete', id);
-    setNotes(notes.filter((task) => task.id !== id));
+    setNotes(notes.filter((note) => note.id !== id));
+  };
+
+  // Toggle reminder
+  const toggleReminder = (id) => {
+    console.log('toggle', id);
+    setNotes(
+      notes.map((note) =>
+        note.id === id ? {...note, reminder: !note.reminder} : note
+      )
+    );
+  };
+
+  // Add Note
+  const handleAddNote = (note) => {
+    console.log('submit note', note);
   };
 
   return (
     <div className="container">
       <div className="row">
         <div className="col">
-          <Header title="Pretty note app" />
-          <Notes notes={notes} onDelete={deleteNote} />
+          <Header title="Prettynote app" />
+          <AddNote onAddNote={handleAddNote} />
+
+          {notes.length > 0 ? (
+            <Notes
+              notes={notes}
+              onDelete={deleteNote}
+              onToggle={toggleReminder}
+            />
+          ) : (
+            'No notes added'
+          )}
         </div>
       </div>
     </div>

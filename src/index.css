@@ -14,22 +14,21 @@
     margin-bottom: 20px;
 }
 
-.task.reminder {
-    border-left: 1ps solid green
+.note.reminder {
+    border-left: 3px solid green;
+    margin-bottom: .5em;
 }
 
-.task h3 {
+.note p {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
-
 
 .custom-btn {
     color: white !important;
 }
 
 .list-group-item {
-    background: #fafafa  !important;
-    margin-bottom: .5em;
+    background: #fafafa !important;
 }
