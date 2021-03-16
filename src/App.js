@@ -8,30 +8,36 @@ function App() {
   const [notes, setNotes] = useState([
     {
       id: 0,
-      text: 'Gym',
+      text: 'Squats & running',
       day: '15 Mar, 2021',
       reminder: true,
     },
     {
       id: 1,
-      text: 'Jogging',
+      text: 'Jogging, & weights',
       day: '16 Mar, 2021',
       reminder: true,
     },
     {
       id: 2,
-      text: 'Weights and jogging',
+      text: 'Weights & yoga',
       day: '17 Mar, 2021',
       reminder: false,
     },
   ]);
+
+  // Delete note
+  const deleteNote = (id) => {
+    console.log('delete', id);
+    setNotes(notes.filter((task) => task.id !== id));
+  };
 
   return (
     <div className="container">
       <div className="row">
         <div className="col">
           <Header title="Pretty note app" />
-          <Notes notes={notes} />
+          <Notes notes={notes} onDelete={deleteNote} />
         </div>
       </div>
     </div>

@@ -28,3 +28,8 @@
 .custom-btn {
     color: white !important;
 }
+
+.list-group-item {
+    background: #fafafa  !important;
+    margin-bottom: .5em;
+}

@@ -1,10 +1,14 @@
 import {FaTimes} from 'react-icons/fa';
 
-const Note = ({note}) => {
+const Note = ({note, onDelete}) => {
   return (
     <div>
       <p>
-        {note.text} <FaTimes />
+        {note.text}{' '}
+        <FaTimes
+          style={{color: 'red', cursor: 'pointer'}}
+          onClick={() => onDelete(note.id)}
+        />
       </p>
       <p className="small">{note.day}</p>
     </div>
