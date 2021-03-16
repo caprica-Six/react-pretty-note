@@ -1,14 +1,16 @@
 import React from 'react';
 import Button from './Button';
 
-export default function Header({title, onClick}) {
-  onClick = () => console.log('clicked');
-
+export default function Header({title, onAddNote, addNote}) {
   return (
     <header>
       <div className="header">
         <h1 style={mainHeading}>{title}</h1>
-        <Button text="Add" color="green" onClick={onClick} />
+        <Button
+          text={addNote ? 'Close note' : 'Add note'}
+          color={addNote ? 'purple' : 'black'}
+          onClick={onAddNote}
+        />
       </div>
     </header>
   );

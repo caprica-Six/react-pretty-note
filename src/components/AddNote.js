@@ -28,7 +28,7 @@ const AddNote = ({onAddNote}) => {
           Note
         </label>
         <input
-          type="email"
+          type="text"
           className="form-control"
           id="exampleInputNote1"
           aria-describedby="noteHelp"
@@ -43,7 +43,7 @@ const AddNote = ({onAddNote}) => {
           Day & Time
         </label>
         <input
-          type="email"
+          type="text"
           className="form-control"
           id="exampleInputDayTime"
           aria-describedby="dayTime"

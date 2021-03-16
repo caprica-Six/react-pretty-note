@@ -6,6 +6,7 @@ import Notes from './components/Notes';
 import AddNote from './components/AddNote';
 
 function App() {
+  const [toggleAddNote, setToggleAddNote] = useState(false);
   const [notes, setNotes] = useState([
     {
       id: 0,
@@ -45,15 +46,30 @@ function App() {
 
   // Add Note
   const handleAddNote = (note) => {
-    console.log('submit note', note);
+    //console.log('submit note', note);
+
+    const id = Math.floor(Math.random() * 10000) + 1;
+
+    const newNote = {id, ...note};
+    setNotes([...notes, newNote]);
+  };
+
+  const handleAddNoteToggle = () => {
+    setToggleAddNote(!toggleAddNote);
+    console.log('toggle form');
   };
 
   return (
     <div className="container">
       <div className="row">
         <div className="col">
-          <Header title="Prettynote app" />
-          <AddNote onAddNote={handleAddNote} />
+          <Header
+            title="Prettynote app"
+            onAddNote={handleAddNoteToggle}
+            addNote={toggleAddNote}
+          />
+
+          {toggleAddNote && <AddNote onAddNote={handleAddNote} />}
 
           {notes.length > 0 ? (
             <Notes
