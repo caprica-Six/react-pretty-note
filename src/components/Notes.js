@@ -1,32 +1,12 @@
-import {useState} from 'react';
+import Note from './Note';
 
-const Notes = () => {
-  const [notes, setNotes] = useState([
-    {
-      id: 0,
-      text: 'Gym',
-      day: '15 Mar, 2021',
-      reminder: true,
-    },
-    {
-      id: 1,
-      text: 'Jogging',
-      day: '16 Mar, 2021',
-      reminder: true,
-    },
-    {
-      id: 2,
-      text: 'Weights and jogging',
-      day: '17 Mar, 2021',
-      reminder: false,
-    },
-  ]);
-
+const Notes = ({notes}) => {
   return (
-    <ul className="list-unstyled">
-      ewFEWf
+    <ul className="list-group">
       {notes.map((note, index) => (
-        <li key={index}>{note.text}</li>
+        <li className="list-group-item" key={index}>
+          <Note note={note} />
+        </li>
       ))}
     </ul>
   );
