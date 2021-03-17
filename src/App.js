@@ -112,6 +112,14 @@ function App() {
           </a>{' '}
           for YouPan.
         </Typography>
+
+        <Typography>
+          Deployed with{' '}
+          <a href="https://www.netlify.com/" target="_blank" rel="noreferrer">
+            Netlify
+          </a>
+          .
+        </Typography>
       </footer>
     </>
   );
