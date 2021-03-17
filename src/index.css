@@ -22,9 +22,12 @@ footer {
     padding: 20px;
 }
 
+.note {
+    margin-top: .5em;
+    margin-bottom: .5em;
+}
+
 .note.reminder {
     background-color: #e6f7ff;
     border-left: 3px solid #1890ff;
-    margin-top: .5em;
-    margin-bottom: .5em;
 }

@@ -1,18 +1,14 @@
 import React from 'react';
 import CoreButton from './Button';
-import {PageHeader, Card} from 'antd';
+import {Card, Typography} from 'antd';
+const {Title} = Typography;
 
 export default function Header({title, onAddNote, addNote}) {
   return (
     <>
-      <PageHeader>
-        <h1 style={mainHeading}>{title}</h1>
-        {/* <CoreButton
-            text={addNote ? 'Close note' : 'Add note'}
-            buttonType={addNote ? 'danger' : 'primary'}
-            onClick={onAddNote}
-          /> */}
-      </PageHeader>
+      <Typography>
+        <Title style={mainHeading}> {title}</Title>
+      </Typography>
 
       <Card
         size="small"
@@ -24,15 +20,14 @@ export default function Header({title, onAddNote, addNote}) {
             onClick={onAddNote}
           />
         }
-        style={{'min-width': 300}}
       >
-        <p>Add or Remove a note</p>
+        Add or Remove your daily notes.
       </Card>
     </>
   );
 }
 
 const mainHeading = {
-  fontSize: '1.5em',
   textAlign: 'center',
+  marginBottom: '1em',
 };
