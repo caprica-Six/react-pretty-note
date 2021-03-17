@@ -1,22 +1,38 @@
 import React from 'react';
-import Button from './Button';
+import CoreButton from './Button';
+import {PageHeader, Card} from 'antd';
 
 export default function Header({title, onAddNote, addNote}) {
   return (
-    <header>
-      <div className="header">
+    <>
+      <PageHeader>
         <h1 style={mainHeading}>{title}</h1>
-        <Button
-          text={addNote ? 'Close note' : 'Add note'}
-          color={addNote ? 'purple' : 'black'}
-          onClick={onAddNote}
-        />
-      </div>
-    </header>
+        {/* <CoreButton
+            text={addNote ? 'Close note' : 'Add note'}
+            buttonType={addNote ? 'danger' : 'primary'}
+            onClick={onAddNote}
+          /> */}
+      </PageHeader>
+
+      <Card
+        size="small"
+        title="Track your pretty notes"
+        extra={
+          <CoreButton
+            text={addNote ? 'Close note' : 'Add note'}
+            buttonType={addNote ? 'danger' : 'primary'}
+            onClick={onAddNote}
+          />
+        }
+        style={{'min-width': 300}}
+      >
+        <p>Add or Remove a note</p>
+      </Card>
+    </>
   );
 }
 
 const mainHeading = {
-  marginTop: '1em',
+  fontSize: '1.5em',
   textAlign: 'center',
 };

@@ -1,35 +1,30 @@
-.container {
-    max-width: 500px;
-    margin: 30px auto;
-    overflow: auto;
-    min-height: 300px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+@import '~antd/dist/antd.css';
+
+body {
+    background: #f4f4f4;
 }
 
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
+.wrapper {
+    min-height: calc(100vh - 70px);
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+footer {
+    text-align: center;
+    margin-top: auto;
+}
+
+.container {
+    background: white;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
 }
 
 .note.reminder {
-    border-left: 3px solid green;
+    background-color: #e6f7ff;
+    border-left: 3px solid #1890ff;
     margin-top: .5em;
     margin-bottom: .5em;
-}
-
-.note p {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-}
-
-.custom-btn {
-    color: white !important;
-}
-
-.list-group-item {
-    background: #fafafa !important;
 }

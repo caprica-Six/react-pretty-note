@@ -1,23 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {Button} from 'antd';
 
-export default function Button({color, text, onClick}) {
+export default function CoreButton({buttonType, text, onClick}) {
   return (
-    <button
-      onClick={onClick}
-      className="custom-btn btn"
-      style={{backgroundColor: color}}
-    >
+    <Button onClick={onClick} className="custom-btn btn" type={buttonType}>
       {text}
-    </button>
+    </Button>
   );
 }
 
-Button.defaultProps = {
+CoreButton.defaultProps = {
   color: 'black',
 };
 
-Button.propTypes = {
+CoreButton.propTypes = {
   title: PropTypes.string,
   color: PropTypes.string,
   onClick: PropTypes.func,

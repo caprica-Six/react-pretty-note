@@ -1,22 +1,26 @@
-import {FaTimes} from 'react-icons/fa';
+import {List, Typography, Button} from 'antd';
+import {CloseOutlined} from '@ant-design/icons';
+import Icon from '@ant-design/icons';
 
 const Note = ({note, onDelete, onToggle}) => {
   return (
-    <div
-      className={`note ${note.reminder ? 'reminder' : ''}`}
-      onDoubleClick={() => onToggle(note.id)}
-    >
-      <li className="list-group-item">
-        <p>
-          {note.text}{' '}
-          <FaTimes
-            style={{color: 'red', cursor: 'pointer'}}
+    <>
+      <div
+        className={`note ${note.reminder ? 'reminder' : ''}`}
+        onDoubleClick={() => onToggle(note.id)}
+      >
+        <List.Item>
+          <Typography className="small">{note.text}</Typography>
+          <Typography className="small">{note.day}</Typography>
+
+          <Button
+            type="danger"
+            icon={<CloseOutlined theme="outlined" />}
             onClick={() => onDelete(note.id)}
           />
-        </p>
-        <p className="small">{note.day}</p>
-      </li>
-    </div>
+        </List.Item>
+      </div>
+    </>
   );
 };
 

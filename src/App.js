@@ -1,5 +1,7 @@
 import {useState} from 'react';
 import PropTypes from 'prop-types';
+import {Row, Col} from 'antd';
+import {Typography} from 'antd';
 
 import Header from './components/Header';
 import Notes from './components/Notes';
@@ -60,34 +62,52 @@ function App() {
   };
 
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col">
-          <Header
-            title="Prettynote app"
-            onAddNote={handleAddNoteToggle}
-            addNote={toggleAddNote}
-          />
-
-          {toggleAddNote && <AddNote onAddNote={handleAddNote} />}
-
-          {notes.length > 0 ? (
-            <Notes
-              notes={notes}
-              onDelete={deleteNote}
-              onToggle={toggleReminder}
+    <>
+      <div className="wrapper">
+        <Row justify="center" align="middle" className="container">
+          <Col span={12}>
+            <Header
+              title="Add Pretty Notes"
+              onAddNote={handleAddNoteToggle}
+              addNote={toggleAddNote}
             />
-          ) : (
-            'No notes added'
-          )}
-        </div>
+          </Col>
+        </Row>
+
+        <main role="main" className="container">
+          <Row justify="center" align="middle">
+            <Col span={12}>
+              {toggleAddNote && <AddNote onAddNote={handleAddNote} />}
+
+              {notes.length > 0 ? (
+                <Notes
+                  notes={notes}
+                  onDelete={deleteNote}
+                  onToggle={toggleReminder}
+                />
+              ) : (
+                'No notes added'
+              )}
+            </Col>
+          </Row>
+        </main>
       </div>
-    </div>
+
+      <footer>
+        <Typography>
+          @2021 Made by Pepa &{' '}
+          <a href="https://github.com/ant-design/ant-design" target="_blank">
+            AntDesign
+          </a>{' '}
+          for YouPan.
+        </Typography>
+      </footer>
+    </>
   );
 }
 
 Header.defaultProps = {
-  title: 'Prettynote',
+  title: 'Prettynote app',
 };
 
 export default App;
