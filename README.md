@@ -1,6 +1,9 @@
 # React Pretty Note app
 A simple note taking app made with React & Ant-Design
 
+
+<img src="https://raw.githubusercontent.com/caprica-Six/react-pretty-note/main/src/images/youpan-pretty-note.png?sanitize=true&raw=true" />
+
 ## Built with: 
 - [Create React App](https://github.com/facebook/create-react-app)
 - [Ant Design](https://github.com/ant-design)
