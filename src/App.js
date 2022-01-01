@@ -102,7 +102,7 @@ function App() {
 
       <footer>
         <Typography>
-          @2021 Made by Pepa &{' '}
+          {' © '} {new Date().getFullYear()} {''} Made by Pepa &{' '}
           <a
             href="https://github.com/ant-design/ant-design"
             target="_blank"
